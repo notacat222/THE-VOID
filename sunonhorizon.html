@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"></script>
+    <link rel="stylesheet" href="https://use.typekit.net/uss5aor.css">
+    <title>SUNONHORIZON</title>
+    <link rel="icon" type="astrixfavicon.ico" href="astrixfavicon.ico">
+    <style>
+           * {
+cursor:url(astrixfavicon.ico), auto;
+}
+         *{
+            padding: 5px;
+            margin: 5px;
+        }
+        *{
+            font-family: "ocr-a-std", monospace;
+font-weight: 400;
+font-style: normal;
+        color: red;
+        }
+    </style>
+</head>
+<body>
+    <body style="background-color: black;"></body>
+    <script src="practice_1_horizon_and_the_sun.js"> style="width:300px;height:300px;"</script>
+    <h2>Experiments with mouse action and variables. Move your mouse on the sketch to see how the sun reacts!</h2>
+    <textarea style=width:600px;height:300px placeholder=
+
+
+    
+    "
+    //this code is from the tutorial on the PJ5 website which I followed along with: https://p5js.org/tutorials/conditionals-and-interactivity/
+    
+    //custom variables for y-coordinate of sun & horizon
+    let sunHeight;
+    let horizon = 200;
+    function setup() {
+      createCanvas(400, 400);
+    }
+    function draw() {
+    
+      //sun follows y-coordinate of mouse
+      sunHeight = mouseY;
+    
+      //light blue background if sun is above horizon
+    
+      //with if-else statement
+    
+      if (sunHeight < horizon) {
+        background(lightblue); // blue sky if above horizon
+      } else {
+        background(0); // night sky otherwise
+      }
+    
+      //sun
+      fill(yellow);
+      circle(200, sunHeight, 100);
+    
+    
+      // draw line for horizon
+      stroke('green');
+      line(0,horizon,400,horizon);
+    
+      //grass
+    
+      fill("green rect(0, horizon, 400)   
+    }"
+
+></textarea>  </body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" href="https://use.typekit.net/uss5aor.css">
+    <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
+  <script language="javascript" type="text/javascript" src="libraries/p5.sound.min.js"></script>
+  <script language="javascript" type="text/javascript" src="audiotrial.js"></script>
+    <title>Audio Reaction</title>
+    <link rel="icon" type="astrixfavicon.ico" href="astrixfavicon.ico">
+</head>
+    <style>
+           * {
+cursor:url(astrixfavicon.ico), auto;
+}
+         *{
+            padding: 5px;
+            margin: 5px;
+        }
+        *{
+            font-family: "ocr-a-std", monospace;
+font-weight: 400;
+font-style: normal;
+        color: red;
+        }
+    </style>
+</head>
+<body>
+    <body style="background-color: black;"></body>
+    <script src="audiotrial.js"> style="width:300px;height:300px;"</script>
+    <h2>Experiments with audio and text/shape from class tutorial.</h2>
+    <textarea style=width:600px;height:300px placeholder=
+    
+   "var sound, analyzer, volume, string, myButton;
+
+   function preload(){
+    sound=loadSound('data/2hollis.mp3');
+   }
+   function setup() {
+     createCanvas(windowWidth,windowHeight);
+     background('pink');
+     getAudioContext().suspend();
+     analyzer= new p5.Amplitude();
+     string='DANCE';
+     myButton=createButton('DANCE NOW');
+     myButton.position(random(width),random(height));
+   }
+   
+   
+   function draw() {
+     background('pink');
+     volume=analyzer.getLevel();
+     mappedVol= map(volume, 0, 1.0, 0, width);
+     circle(mouseX,mouseY, mappedVol);
+     push();
+     translate(width/2,height/2);
+     rotate(mappedVol);
+       textSize(mappedVol);
+       text('DANCE', 0, 0);
+       text(string,0,0);
+     pop();
+     console.log(volume + '|'+mappedVol);
+   
+   }
+   function mousePressed(){
+      getAudioContext().resume();
+    analyzer= new p5.Amplitude();
+    analyzer.setInput(sound);
+    loop();
+     if(sound.isPlaying()==true){
+    sound.stop()
+    sound.noLoop();
+   }
+   else {
+     sound.play();
+     sound.loop();
+     }
+   }
+   
+   function keyPressed(){
+     if (key=='b'){
+       fill('blue');
+     }
+     string=string+key;
+   }
+   "
+
+></textarea>  </body>
+</html>
