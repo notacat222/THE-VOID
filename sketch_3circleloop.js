@@ -1,3 +1,6 @@
+//code taken from AI, I tried various prompts and decided I liked this one. I changed a few of the paramters.
+
+
 let t = 0; // Time parameter
 const speed = 0.02; // Speed of the animation
 const numPoints = 150; // Number of points to draw the shape
