@@ -1,3 +1,6 @@
+//code taken from AI, I tried various prompts and decided I liked this one. I changed a few of the paramters.
+
+
 let t = 0; // Main time parameter
 const speed = 1; // Adjust for animation speed
 const traceDensity = 1; // Adjust for how many points are effectively traced (lower for more gaps)
