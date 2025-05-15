@@ -5,8 +5,8 @@ let imgHeight = 70;
 let mappedVolume=100;
 let go=false;
 function preload(){
- sound=loadSound("data/workbook.mp3");
- img = loadImage("data/ME.png")
+ sound=loadSound("workbook.mp3");
+ img = loadImage("ME.png")
 }
 function setup() {
   createCanvas(windowWidth,windowHeight);
